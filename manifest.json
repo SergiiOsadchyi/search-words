@@ -1,0 +1,50 @@
+{
+	"manifest_version": 2,
+	"name": "SeaW",
+	"description": "Search your words in a current page",
+	"version": "1.0",
+	"icons": {
+		"16": "image/icon/16.png",
+		"24": "image/icon/24.png",
+		"32": "image/icon/32.png",
+		"48": "image/icon/48.png",
+		"64": "image/icon/64.png",
+		"72": "image/icon/72.png",
+		"96": "image/icon/96.png",
+		"128": "image/icon/128.png"
+	},
+	"browser_action": {
+		"default_icon": {
+			"16": "image/icon/16.png",
+			"24": "image/icon/24.png",
+			"32": "image/icon/32.png",
+			"48": "image/icon/48.png",
+			"64": "image/icon/64.png",
+			"72": "image/icon/72.png",
+			"96": "image/icon/96.png",
+			"128": "image/icon/128.png"
+		},
+		"default_title": "Search your words in a current page",
+		"default_popup": "html/popup.html"
+	},
+	"permissions": [
+		"storage",
+		"tabs",
+		"activeTab",
+		"cookies"
+    ],
+  	"content_scripts": [
+		{
+		"matches": [
+			"<all_urls>"
+		],
+		"js": [
+			"content-script/cs-main.js"
+		],
+		"css": [
+			"css/content-script.css"
+		],
+		"run_at": "document_idle"
+		}
+	]
+}
